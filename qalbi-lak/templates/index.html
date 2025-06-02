@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+  <meta charset="UTF-8">
+  <title>من قلب إياد 💔</title>
+  <style>
+    body {
+      font-family: Tahoma;
+      text-align: center;
+      padding: 30px;
+      background: #fff0f5;
+    }
+    button {
+      padding: 10px 20px;
+      margin: 10px;
+      font-size: 18px;
+      border-radius: 10px;
+      border: none;
+      background-color: #ff69b4;
+      color: white;
+      cursor: pointer;
+    }
+    textarea {
+      width: 80%;
+      height: 100px;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>إلى أغلى إنسانة على قلبي 🥺</h1>
+  <p>
+    أنا آسف على كل شيء، آسف إذا زعلتك أو ضيّقت صدرك، 
+    والله ما أقدر أعيش بدونك، أنتي فرحة أيامي، وضحكتك ترد روحي. 
+    سامحيني إذا قصرت، لكن والله أحبك بصدق من أعماق قلبي.
+  </p>
+
+  <button onclick="nextStep('love')">اضغطي هون 🥹</button>
+  <div id="messageBox"></div>
+
+  <script>
+    function nextStep(step) {
+      if (step === 'love') {
+        document.getElementById('messageBox').innerHTML = `
+          <p>يا مشاغبة وحبيبة قلبي، أنتي مو بس حب... أنتي نكهة الحياة 😂❤️</p>
+          <p>مرة واحد حب واحدة، حبها حب غريب، كل ما زعلت عليه... صار يشرب موية عشان يشعر إنه فاضي بدونها 💔😂</p>
+          <button onclick="nextStep('forgive')">تسامحيني؟ 😔</button>
+        `;
+      } else if (step === 'forgive') {
+        document.getElementById('messageBox').innerHTML = `
+          <p>العلاقات تتعب أحيانًا، بس أنا وياك نكمل سوا للأبد إن شاء الله 💍</p>
+          <button onclick="nextStep('yes')">نعم</button>
+          <button onclick="nextStep('no')">لا</button>
+        `;
+      } else if (step === 'yes') {
+        document.getElementById('messageBox').innerHTML = `
+          <form method="POST" action="/send">
+            <p>اكتبيلي كل شي بخاطرك وأنا أقرأه بعناية 🥹</p>
+            <textarea name="herMessage" placeholder="اكتبي هنا..."></textarea><br>
+            <button type="submit">إرسال 💌</button>
+          </form>
+        `;
+      } else if (step === 'no') {
+        document.getElementById('messageBox').innerHTML = `
+          <p>يخي اضغطي نعم يا مشاكسة 😭 والله إني أموت فيك 🥺</p>
+          <button onclick="nextStep('yes')">طيب خلاص، نعم ❤️</button>
+        `;
+      }
+    }
+  </script>
+
+</body>
+</html>
